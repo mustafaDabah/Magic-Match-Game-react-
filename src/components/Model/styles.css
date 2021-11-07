@@ -1,0 +1,73 @@
+.model-background {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: rgba(63, 35, 35, 0.5);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.model-container {
+    background-color:#c23866;
+    padding: 20px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s ease-in-out;
+    /* transform: scale(0) */
+}
+.model-container > button {
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+.title h1 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.title span {
+    color: yellow;
+    font-size: 30px;
+}
+.footer {
+    margin-top: 20px;
+}
+.footer  button {
+    background:#7c0029;
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+.open {
+    transition: all 0.5s ease-in-out;
+    animation: openModal 0.4s ease-out forwards;
+}
+.close {
+    animation: closeModal 0.4s ease-out forwards;
+}
+
+@keyframes openModal {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0);   }
+}
+
+@keyframes closeModal {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%);}
+}
+
+@media (max-width:768px) {
+    .model-container {
+        width: 90%;
+    }    
+    .title h1 {
+        font-size: 25px;
+    }
+    .footer  button {
+        width: 150px;
+        font-size: 20px;
+    }
+}
